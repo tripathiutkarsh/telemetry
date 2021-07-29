@@ -1,0 +1,31 @@
+[ {
+  "id" : "0102",
+  "temperature" : "65",
+  "humidity" : "4",
+  "location" : "69.56, 86.00",
+  "timestamp" : "2021/07/29 00:45:35"
+}, {
+  "id" : "0102",
+  "temperature" : "44",
+  "humidity" : "16",
+  "location" : "69.56, 86.00",
+  "timestamp" : "2021/07/29 00:45:40"
+}, {
+  "id" : "0102",
+  "temperature" : "47",
+  "humidity" : "18",
+  "location" : "69.56, 86.00",
+  "timestamp" : "2021/07/29 00:45:45"
+}, {
+  "id" : "0102",
+  "temperature" : "28",
+  "humidity" : "30",
+  "location" : "69.56, 86.00",
+  "timestamp" : "2021/07/29 00:45:50"
+}, {
+  "id" : "0102",
+  "temperature" : "50",
+  "humidity" : "8",
+  "location" : "69.56, 86.00",
+  "timestamp" : "2021/07/29 00:45:55"
+} ]

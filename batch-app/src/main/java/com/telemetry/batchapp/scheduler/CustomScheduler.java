@@ -26,7 +26,7 @@ public class CustomScheduler {
     @Qualifier("report")
     private Job report;
 
-    @Scheduled(fixedRate = 60000)
+    @Scheduled(fixedRate = 5000)
     public void convertToJSON() throws Exception {
         JobParameters params = new JobParametersBuilder()
                 .addString("time", String.valueOf(System.currentTimeMillis()))
@@ -34,7 +34,7 @@ public class CustomScheduler {
         jobLauncher.run(job, params);
     }
 
-    @Scheduled(fixedRate = 1200000)
+    @Scheduled(fixedRate = 20000)
     public void reportingJob() throws Exception {
         JobParameters params = new JobParametersBuilder()
                 .addString("time", String.valueOf(System.currentTimeMillis()))

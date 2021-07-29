@@ -34,7 +34,6 @@ import java.util.stream.Stream;
 @EnableBatchProcessing
 public class BatchConfig {
 
-    private Resource outputResource = new FileSystemResource(Constants.REPORT_PATH + System.currentTimeMillis() + Constants.CSV);
     @Autowired
     private JobBuilderFactory jobBuilder;
     @Autowired
@@ -109,9 +108,9 @@ public class BatchConfig {
     public FlatFileItemWriter<DataReceived> writer() {
         //Create writer instance
         FlatFileItemWriter<DataReceived> writer = new FlatFileItemWriter<>();
-
+        String path = Constants.REPORT_PATH + System.currentTimeMillis() + Constants.CSV;
         //Set output file location
-        writer.setResource(outputResource);
+        writer.setResource(new FileSystemResource(path));
 
         //All job repetitions should "append" to same output file
         writer.setAppendAllowed(true);
@@ -136,7 +135,7 @@ public class BatchConfig {
     }
 
     private Resource[] files(){
-        try (Stream<Path> walk = Files.walk(Paths.get(Constants.JSON_RESOURCES))) {
+        try (Stream<Path> walk = Files.walk(Paths.get("C:/ut/Project/telemetry/batch-app/json"))) {
             List<FileSystemResource> result = walk.filter(Files::isRegularFile)
                     .map(x -> new FileSystemResource(x.toString())).collect(Collectors.toList());
 
